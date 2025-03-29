@@ -1,5 +1,11 @@
 package com.coding.challenge.hackerrank
 
+/**
+ * Descricao do problema
+ * temos um array com as notas de determinados clientes, a posicao no array identifica a posicao que o cliente ficou no campeonato
+ * por exemplo, array [4,5,6] nessa ordem as pontuais seriam 4 + 3 = 7, 5 + 2 = 7, 6 + 1 = 7
+ * o objetivo e retornar de acordo com as combinacoes de posicao, quantos clientes diferentes podem ser campeoes
+ */
 class ChanceToBeChampion {
 
     fun calculateRewardOptimized(initialReward: List<Int>): Set<Int> {

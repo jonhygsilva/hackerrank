@@ -1,28 +1,43 @@
-package com.coding.challenge.hackerrank
-
-import java.sql.DriverManager.println
-import java.util.*
-import kotlin.collections.ArrayList
-
 class LongestKotlinFile {
+
     /*
         Given a string s, find the length of the longest substring without repeating characters.
-       https://leetcode.com/problems/longest-substring-without-repeating-characters/
+        https://leetcode.com/problems/longest-substring-without-repeating-characters/
      */
 
+    /**
+     * Function to find the length of the longest substring without repeating characters.
+     *
+     * @param s The input string.
+     * @return The length of the longest substring without repeating characters.
+     */
+    fun lengthOfLongestSubstring(s: String): Int {
+        val seen = mutableMapOf<Char, Int>()
+        var left = 0
+        var maxLength = 0
 
-    fun main(args: Array<String>) {
-        val a  = arrayListOf(1,2,3,4)
-        val b  = arrayListOf(1,2,3,4)
+        for (right in s.indices) {
+            // If the character at 'right' has been seen before and is inside the current window, move 'left'
+            if (seen.contains(s[right]) && seen[s[right]]!! >= left) {
+                left = seen[s[right]]!! + 1
+            }
 
-        val n = a.size/2
-        val c = "dsdsdsd"
+            // Update the maximum length of the substring
+            maxLength = maxOf(maxLength, right - left + 1)
 
-        for (i in 0 .. a.size) {
-
+            // Record the current character's index
+            seen[s[right]] = right
         }
 
-
-        println()
+        return maxLength
     }
+}
+
+
+fun main(args: Array<String>) {
+    // Example usage of the function
+    val inputString = "abcabcbb"
+    val result = LongestKotlinFile().lengthOfLongestSubstring(inputString)
+
+    println("The length of the longest substring without repeating characters is: $result")
 }
