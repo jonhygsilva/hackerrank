@@ -14,28 +14,28 @@ public class EqualStacks {
         int i3 = 0;
 
 
-        while((sizeH1 != sizeH2) || (sizeH1 != sizeH3) || (sizeH2 != sizeH3)) {
+        while((sizeH1 != sizeH3) || (sizeH2 != sizeH3)) {
             if(sizeH1 > sizeH2) {
-                sizeH1 = sizeH1 -= h1.get(i1);
+                sizeH1 -= h1.get(i1);
                 i1++;
             } else if (sizeH2 > sizeH1) {
-                sizeH2 = sizeH2 -= h2.get(i2);
+                sizeH2 -= h2.get(i2);
                 i2++;
             }
 
             if(sizeH1 > sizeH3) {
-                sizeH1 = sizeH1 -= h1.get(i1);
+                sizeH1 -= h1.get(i1);
                 i1++;
             } else if (sizeH3 > sizeH1) {
-                sizeH3 = sizeH3 -= h3.get(i3);
+                sizeH3 -= h3.get(i3);
                 i3++;
             }
 
             if(sizeH2 > sizeH3) {
-                sizeH2 = sizeH2 -= h2.get(i2);
+                sizeH2 -= h2.get(i2);
                 i2++;
             } else if (sizeH3 > sizeH2) {
-                sizeH3 = sizeH3 -= h3.get(i3);
+                sizeH3 -= h3.get(i3);
                 i3++;
             }
 
